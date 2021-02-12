@@ -22,13 +22,16 @@ const main = async () => {
       text = text + "  ";
     }
     for (let l = -1, k = midText; l < i; l++) {
-      if (k < inputTextLength || k < midText) {
+        let flag = 0;
+      if (k < inputTextLength - 1 || k < midText) {
         text += inputText[k] + " ";
-        k++;
+        // k++;
       } if (k == inputTextLength - 1) {
+          flag = 1
         text += inputText[k] + " ";
         k = 0;
       }
+      if(flag == 0) k++
     }
     console.log(text);
   }
